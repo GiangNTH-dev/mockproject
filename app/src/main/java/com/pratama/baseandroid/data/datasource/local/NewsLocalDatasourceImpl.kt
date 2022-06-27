@@ -5,8 +5,9 @@ import com.pratama.baseandroid.data.datasource.local.db.AppDatabase
 import com.pratama.baseandroid.data.datasource.local.entity.toNews
 import com.pratama.baseandroid.data.datasource.local.entity.toNewsEntity
 import com.pratama.baseandroid.domain.entity.News
+import javax.inject.Inject
 
-class NewsLocalDatasourceImpl(private val appDatabase: AppDatabase) : NewsLocalDatasource {
+class NewsLocalDatasourceImpl @Inject constructor (private val appDatabase: AppDatabase) : NewsLocalDatasource {
 
     override suspend fun insertNews(news: List<News>) {
         news.map {

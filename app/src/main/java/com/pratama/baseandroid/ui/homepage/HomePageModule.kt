@@ -12,7 +12,7 @@ import dagger.hilt.android.components.ActivityComponent
 class HomePageModule {
 
     @Provides
-    fun provideTopHeadLineUseCase(repository: NewsRepository): GetTopHeadlineUseCase {
+    fun provideTopHeadLineUseCase(repository: NewsRepository):  GetTopHeadlineUseCase {
         return GetTopHeadlineUseCase(repository)
     }
 

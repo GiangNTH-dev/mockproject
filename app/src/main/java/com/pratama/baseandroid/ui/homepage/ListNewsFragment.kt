@@ -1,9 +1,11 @@
 package com.pratama.baseandroid.ui.homepage
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewbinding.ViewBinding
 import com.github.ajalt.timberkt.d
 import com.pratama.baseandroid.coreandroid.base.BaseFragmentBinding
 import com.pratama.baseandroid.coreandroid.extensions.toGone
@@ -62,9 +64,7 @@ class ListNewsFragment : BaseFragmentBinding<FragmentListNewsBinding>(), NewsIte
 
     override fun onNewsSelected(news: News) {
         findNavController().navigate(
-            ListNewsFragmentDirections.actionListNewsFragmentToDetailNewsFragment(
-                news.toDto()
-            )
+            ListNewsFragmentDirections.actionListNewsFragmentToBlank()
         )
     }
 
@@ -79,5 +79,4 @@ class ListNewsFragment : BaseFragmentBinding<FragmentListNewsBinding>(), NewsIte
     private fun callData() {
         listNewsViewModel.getTopHeadlinesByCountry(country = "us", category = "technology")
     }
-
 }

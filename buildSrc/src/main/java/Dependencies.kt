@@ -6,7 +6,7 @@ object AndroidConfig {
 }
 
 object Versions {
-    const val kotlin = "1.4.30"
+    const val kotlin = "1.5.21"
     const val gradle = "4.1.2"
     const val junit = "4.12"
     const val core_ktx = "1.3.0"
@@ -17,7 +17,7 @@ object Versions {
     const val retrofit = "2.9.0"
     const val retrofit_moshi = "2.6.2"
     const val logging_interceptor = "4.8.0"
-    const val hilt = "2.33-beta"
+    const val hilt = "2.38"
     const val groupie = "2.9.0"
     const val room = "2.2.5"
     const val android_lifecycle = "2.3.0-alpha05"

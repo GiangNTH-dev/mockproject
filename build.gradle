@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:$Versions.gradle"
+        classpath 'com.android.tools.build:gradle:4.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$Versions.kotlin"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$Versions.hilt"
         classpath 'com.github.ben-manes:gradle-versions-plugin:+'
@@ -16,6 +16,7 @@ buildscript {
 
 plugins {
     id("io.gitlab.arturbosch.detekt").version("1.15.0")
+    id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
 }
 
 allprojects {
