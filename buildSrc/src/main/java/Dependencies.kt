@@ -1,5 +1,5 @@
 object AndroidConfig {
-    const val compileSdkVersion = 30
+    const val compileSdkVersion = 31
     const val buildToolsVersion = "30.0.3"
     const val minSdkVersion = 21
     const val targetSdkVersion = 29
@@ -9,9 +9,9 @@ object Versions {
     const val kotlin = "1.5.21"
     const val gradle = "4.1.2"
     const val junit = "4.12"
-    const val core_ktx = "1.3.0"
+    const val core_ktx = "1.6.0"
     const val androidx_appcompat = "1.1.0"
-    const val androidx_constraintlayout = "1.1.3"
+    const val androidx_constraintlayout = "2.1.3"
     const val routing_navigator = "1.0.0"
     const val coroutines = "1.3.7"
     const val retrofit = "2.9.0"

@@ -1,34 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_nav_graph"
-    app:startDestination="@id/listNewsFragment">
+    app:startDestination="@id/wellcomePageDirection">
 
     <fragment
-        android:id="@+id/listNewsFragment"
-        android:name="com.pratama.baseandroid.ui.homepage.ListNewsFragment"
+        android:id="@+id/wellcomePageDirection"
+        android:name="com.pratama.baseandroid.ui.homepage.WellcomeFragment"
         android:label="fragment_list_news"
-        tools:layout="@layout/fragment_list_news" >
+        tools:layout="@layout/wellcome_fragment" >
         <action
-            android:id="@+id/action_listNewsFragment_to_detailNewsFragment"
-            app:destination="@id/detailNewsFragment" />
-        <action
-            android:id="@+id/action_listNewsFragment_to_Blank"
-            app:destination="@id/blankFragment" />
+            android:id="@+id/action_wellcomehomepage_to_loginpage"
+            app:destination="@id/loginFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/detailNewsFragment"
-        android:name="com.pratama.baseandroid.ui.detailpage.DetailNewsFragment"
-        android:label="fragment_detail_news"
-        tools:layout="@layout/fragment_detail_news" >
-        <argument
-            android:name="newsDto"
-            app:argType="com.pratama.baseandroid.ui.dto.NewsDto"
-            app:nullable="true" />
+
+    <fragment android:id="@+id/loginFragment"
+        android:name="com.pratama.baseandroid.ui.homepage.LoginFragment"
+        tools:layout="@layout/fragment_login">
     </fragment>
-    <fragment android:id="@+id/blankFragment"
-        android:name="com.pratama.baseandroid.ui.homepage.BlankFragment"
-        tools:layout="@layout/fragment_blank"
-        />
-</navigation>
+
+</fragment>
