@@ -3,32 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_nav_graph"
-    app:startDestination="@id/listNewsFragment">
+    app:startDestination="@id/wellcomeFragment">
 
     <fragment
-        android:id="@+id/listNewsFragment"
-        android:name="com.pratama.baseandroid.ui.homepage.ListNewsFragment"
-        android:label="fragment_list_news"
-        tools:layout="@layout/fragment_list_news" >
+        android:id="@+id/wellcomeFragment"
+        android:name="com.pratama.baseandroid.ui.homepage.WellcomeFragment"
+        android:label="fragment_well_come"
+        tools:layout="@layout/fragment_wellcome" >
         <action
-            android:id="@+id/action_listNewsFragment_to_detailNewsFragment"
-            app:destination="@id/detailNewsFragment" />
-        <action
-            android:id="@+id/action_listNewsFragment_to_Blank"
-            app:destination="@id/blankFragment" />
+            android:id="@+id/action_wellcomefragment_to_loginfragment"
+            app:destination="@id/fragmentLogin" />
+
     </fragment>
     <fragment
-        android:id="@+id/detailNewsFragment"
-        android:name="com.pratama.baseandroid.ui.detailpage.DetailNewsFragment"
+        android:id="@+id/fragmentLogin"
+        android:name="com.pratama.baseandroid.ui.homepage.LoginFragment"
         android:label="fragment_detail_news"
-        tools:layout="@layout/fragment_detail_news" >
-        <argument
-            android:name="newsDto"
-            app:argType="com.pratama.baseandroid.ui.dto.NewsDto"
-            app:nullable="true" />
+        tools:layout="@layout/fragment_login" >
+<!--        <argument-->
+<!--            android:name="newsDto"-->
+<!--            app:argType="com.pratama.baseandroid.ui.dto.NewsDto"-->
+<!--            app:nullable="true" />-->
+        <action
+            android:id="@+id/action_navigateto_chatting"
+            app:destination="@id/chattingFragment" />
     </fragment>
-    <fragment android:id="@+id/blankFragment"
-        android:name="com.pratama.baseandroid.ui.homepage.BlankFragment"
-        tools:layout="@layout/fragment_blank"
-        />
+    <fragment
+        android:id="@+id/chattingFragment"
+        android:name="com.pratama.baseandroid.ui.homepage.ChattingFragment"
+        android:label="fragment_chatting"
+        tools:layout="@layout/fragment_chatting" >
+    </fragment>
+
 </navigation>

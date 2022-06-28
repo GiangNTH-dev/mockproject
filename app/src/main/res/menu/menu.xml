@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+<item android:id="@+id/ic_drawer"
+    android:icon="@drawable/ic_baseline_view"
+    android:title=""
+    />
+    <item android:id="@+id/ic_map"
+        android:icon="@drawable/ic_baseline_add_location"
+        android:title=""
+        />
+    <item android:id="@+id/ic_message"
+        android:icon="@drawable/ic_baseline_message"
+        android:title=""
+        /><item android:id="@+id/ic_setting"
+    android:icon="@drawable/ic_baseline"
+    android:title=""
+    />
+</menu>

@@ -16,8 +16,5 @@ class HomePageModule {
         return GetTopHeadlineUseCase(repository)
     }
 
-    @Provides
-    fun provideListNewsViewModel(useCase: GetTopHeadlineUseCase): ListNewsViewModel {
-        return ListNewsViewModel(useCase)
-    }
+
 }
