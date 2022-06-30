@@ -41,7 +41,7 @@ class ChattingFragment : BaseFragmentBinding<FragmentChattingBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentChattingBinding=FragmentChattingBinding::inflate
 
     override fun setupView(binding: FragmentChattingBinding) {
-        binding.bottomNavigationBar.setOnNavigationItemReselectedListener {
+        binding.bottomNavigationBar.setOnNavigationItemSelectedListener {
             when(it.itemId)
             {
                 R.id.ic_drawer->replaceFragment(drawerFragment)
@@ -49,16 +49,18 @@ class ChattingFragment : BaseFragmentBinding<FragmentChattingBinding>() {
                 R.id.ic_message->replaceFragment(messageFragment)
                 R.id.ic_setting->replaceFragment(settingFragment)
             }
+            return@setOnNavigationItemSelectedListener true
         }
+
     }
+
     private fun replaceFragment(fragment:Fragment)
     {
         if(fragment!=null)
         {
-
-            val transaction=fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.fragment_container,fragment)
-            transaction?.commit()
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container,fragment)
+            transaction.commit()
         }
     }
 
