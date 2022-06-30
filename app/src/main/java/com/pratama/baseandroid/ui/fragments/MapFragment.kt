@@ -1,7 +1,6 @@
 package com.pratama.baseandroid.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.pratama.baseandroid.R
 import com.pratama.baseandroid.coreandroid.base.BaseFragmentBinding
@@ -23,9 +21,23 @@ class MapFragment : BaseFragmentBinding<FragmentMapBinding>(), OnMapReadyCallbac
         super.onViewCreated(view, savedInstanceState)
         val supportMapFragment: SupportMapFragment =
             (childFragmentManager.findFragmentById((R.id.google_map)) as SupportMapFragment)
-        supportMapFragment.getMapAsync(OnMapReadyCallback {
-            onMapReady(it)
-        })
+        supportMapFragment.getMapAsync { googleMap ->
+            // When map is loaded
+            googleMap.setOnMapClickListener { latLng -> // When clicked on map
+                // Initialize marker options
+                val markerOptions = MarkerOptions()
+                // Set position of marker
+                markerOptions.position(latLng)
+                // Set title of marker
+                markerOptions.title(latLng.latitude.toString() + " : " + latLng.longitude)
+                // Remove all marker
+                googleMap.clear()
+                // Animating to zoom the marker
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10f))
+                // Add marker on map
+                googleMap.addMarker(markerOptions)
+            }
+        }
     }
 
     override fun onMapReady(p0: GoogleMap) {

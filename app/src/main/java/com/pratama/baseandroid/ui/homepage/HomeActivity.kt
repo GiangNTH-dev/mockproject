@@ -1,6 +1,6 @@
-package com.pratama.baseandroid.ui.homepage
 
-import android.util.Log
+
+package com.pratama.baseandroid.ui.homepage
 import android.view.LayoutInflater
 import com.github.ajalt.timberkt.d
 import com.pratama.baseandroid.coreandroid.base.BaseActivityBinding
